@@ -9,13 +9,14 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
 
   const handleSubmit = () => {
-    setTasks([...tasks, { todo, status: "todo" }]);
+    setTasks([...tasks, { todo, status: "todo", time: Date.now() }]);
     setTodo("");
   };
 
   const updateTaskStatus = (taskIndex, newStatus) => {
     const updatedTasks = [...tasks];
     updatedTasks[taskIndex].status = newStatus;
+    updatedTasks[taskIndex].time = Date.now();
     setTasks(updatedTasks);
   };
 

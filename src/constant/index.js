@@ -7,4 +7,23 @@ export const taskList = [
     },
     { title: "Done", filterStatus: "done", myClassName: "doneTodoTask" },
   ];
+
+
+
+  export const GetDateMonthTime = (epochTime) => {
+    const dateObj = new Date(epochTime);
+    const options = {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true
+    };
+    const dateTime = dateObj.toLocaleString('en-IN', options).replace(',', '');
+    const formattedDateTime = `${dateTime}`;
+    return formattedDateTime;
+  };
+  
   

@@ -1,3 +1,5 @@
+import { GetDateMonthTime } from "../constant";
+
 function TaskList({
     title,
     tasks,
@@ -14,6 +16,7 @@ function TaskList({
               (filterStatus === undefined || task.status === filterStatus) && (
                 <div className={filterClassName} key={index}>
                   <p className="title">{task.todo}</p>
+                  <p className="time">Time: {GetDateMonthTime(task.time)}</p>
                   {task.status === "todo" && (
                     <div className="buttonSection">
                       <button className="prevButton" disabled>
